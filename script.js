@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // 1. Particle System Initialization
     const particlesContainer = document.getElementById('particles');
     const particleCount = 50;
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             particle.style.top = Math.random() * 100 + '%';
             particle.style.animationDelay = Math.random() * 20 + 's';
             particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-            const size = Math.random() * 2 + 1;
+            const size = Math.random() * 3 + 2;
             particle.style.width = size + 'px';
             particle.style.height = size + 'px';
             particlesContainer.appendChild(particle);
@@ -24,14 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    if(navbar) {
+    if (navbar) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) navbar.classList.add('scrolled');
             else navbar.classList.remove('scrolled');
         });
     }
 
-    if(menuToggle && navLinks) {
+    if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             const spans = menuToggle.querySelectorAll('span');
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Mobile Tap logic for Flip Cards
     const flipCards = document.querySelectorAll('.service-card-flip');
     flipCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function () {
             if (window.innerWidth <= 1024) this.classList.toggle('flipped');
         });
     });
